@@ -8,9 +8,12 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ListView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 
 
-class MainActivity : ComponentActivity() {
+
+class MainActivity : AppCompatActivity() {
 
     private lateinit var dbHelper: DatabaseHelper
     private lateinit var editTextName: EditText
@@ -32,6 +35,9 @@ class MainActivity : ComponentActivity() {
 
         contactAdapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, contactList)
         listViewContacts.adapter = contactAdapter
+
+        val toolbar: Toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
 
         loadContacts()
 

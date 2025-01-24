@@ -1,28 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/editTextName"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Name" />
+        android:title="Contact Manager"
+        app:titleTextColor="@android:color/background_dark"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-    <EditText
-        android:id="@+id/editTextPhone"
+    <!-- Name Eingabefeld -->
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Phone" />
+        android:layout_marginTop="16dp"
+        app:hintEnabled="true"
+        app:hintAnimationEnabled="true"
+        app:boxBackgroundMode="filled"
+        app:boxBackgroundColor="?android:attr/colorAccent"
+        app:boxCornerRadiusTopStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusBottomEnd="12dp">
 
-    <Button
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Name"
+            android:textColor="#000000"
+            android:textColorHint="#B0B0B0"
+            android:textSize="16sp"
+            android:padding="12dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Phone Eingabefeld -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:hintEnabled="true"
+        app:hintAnimationEnabled="true"
+        app:boxBackgroundMode="filled"
+        app:boxBackgroundColor="?android:attr/colorAccent"
+        app:boxCornerRadiusTopStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusBottomEnd="12dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Phone"
+            android:textColor="#000000"
+            android:textColorHint="#B0B0B0"
+            android:textSize="16sp"
+            android:padding="12dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Button zum Hinzufügen -->
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonAdd"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add Contact" />
+        android:text="Add Contact"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:backgroundTint="?android:attr/colorAccent"
+        android:layout_marginTop="16dp"
+        android:padding="14dp"
+        android:elevation="4dp"
+        android:clickable="true"
+        android:focusable="true" />
 
+    <!-- ListView für Kontakte -->
     <ListView
         android:id="@+id/listViewContacts"
         android:layout_width="match_parent"
